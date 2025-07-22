@@ -1,7 +1,7 @@
 [build]
-  publish = "frontend/build"  # Path to your React build output (where 'npm run build' puts files)
-  base = "frontend"          # Tells Netlify to go inside the 'frontend' folder of your repo
-  command = "npm run build"  # The command Netlify should run to build your React app
+  publish = "build"          # <--- CHANGE THIS LINE! It should be just "build"
+  base = "frontend"          # This is correct and stays "frontend"
+  command = "npm run build"  # This is correct
 
 [build.environment]
-  REACT_APP_BACKEND_URL = "https://nivas-backend.onrender.com/" # <--- YOUR RENDER BACKEND URL HERE
+  REACT_APP_BACKEND_URL = "https://nivas-backend.onrender.com/" # Your Backend API URL
