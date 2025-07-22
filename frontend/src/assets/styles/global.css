@@ -1,0 +1,257 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+}
+
+/* Custom Theming Variables (Root Variables) */
+:root {
+    --primary-color: #a87b5d; /* Earthy/Vastu-friendly tone */
+    --secondary-color: #d4c1a5; /* Lighter earthy tone */
+    --tertiary-color: #6a4a3a; /* Darker accent */
+    --text-color: #333;
+    --light-text-color: #f8f8f8;
+    --background-opacity: rgba(255, 255, 255, 0.7); /* Light overlay for content */
+    --box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Reusable Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Default padding for desktop */
+}
+
+.section-padding {
+    padding: 60px 0; /* Default section padding for desktop */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 12px 25px; /* Slightly larger button padding */
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: var(--tertiary-color); /* Darker on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Specific component styling adjustments (if desired to live here) */
+/* Navbar link hover effect */
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Form input styling */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(168, 123, 93, 0.2);
+}
+
+
+/* ------------------------------------------- */
+/* RESPONSIVENESS (Media Queries) */
+/* ------------------------------------------- */
+
+/* Tablets and smaller desktops (768px to 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px; /* Reduce padding */
+    }
+
+    .section-padding {
+        padding: 40px 0; /* Reduce section padding */
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    /* Adjust service/design card grids */
+    div[style*="gridTemplateColumns"] { /* Target grids generally */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* Specific adjustments for navbar for smaller screens */
+    nav ul {
+        flex-wrap: wrap; /* Allow navigation items to wrap */
+        justify-content: center;
+    }
+
+    nav li {
+        margin: 10px 15px; /* Adjust spacing */
+    }
+}
+
+/* Mobile Devices (up to 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 10px; /* Further reduce padding */
+    }
+
+    .section-padding {
+        padding: 30px 0; /* Further reduce section padding */
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller font for hero tagline */
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    /* Adjust navbar for full mobile experience */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    nav li {
+        margin: 8px 0; /* Vertical spacing for stacked items */
+        width: 100%; /* Make list items take full width */
+    }
+
+    nav a {
+        padding: 8px 0;
+        display: block; /* Make links block level for easier tapping */
+    }
+
+    /* Adjust Hero section for mobile */
+    div[style*="backgroundImage"] { /* Target elements with background images like Hero */
+        height: 400px; /* Shorter hero section on mobile */
+    }
+
+    div[style*="display: grid"] { /* Target grids generally */
+        grid-template-columns: 1fr; /* Stack items in a single column */
+    }
+
+    /* Form specific adjustments */
+    form {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+}
+
+/* Smaller Mobile Devices (e.g., iPhone 5/SE size, up to 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+
+    div[style*="backgroundImage"] {
+        height: 350px;
+    }
+}
