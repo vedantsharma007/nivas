@@ -30,7 +30,7 @@ const Astrology = () => {
 
         try {
             // This part will only run AFTER payment is successful
-            const response = await fetch('http://localhost:5000/api/astrology', {
+            const response = await fetch('https://nivas-backend.onrender.com/api/plot/get-price',  {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

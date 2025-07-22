@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const DB_URI = 'mongodb://localhost:27017/nivasa_db'; // Your DB connection string
+const DB_URI = process.env.MONGODB_URI; // Your DB connection string
 
 // Connect to MongoDB
 mongoose.connect(DB_URI)
